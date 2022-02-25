@@ -29,13 +29,10 @@
                     >
                     <div v-if="showlayer" class="back-layer"></div>
                     </transition>
-
-                        <transition   enter-active-class="animate__animated animate__fadeIn"
-                                      leave-active-class="animate__animated animate__fadeOut">
-                            <component :is="Component" />
-                        </transition>
-
-
+                    <transition   enter-active-class="animate__animated animate__fadeIn"
+                                    leave-active-class="animate__animated animate__fadeOut">
+                        <component :is="Component" />
+                    </transition>
                 </div>
             </div>
         </div>

@@ -23,7 +23,7 @@
                                 <div class="each-home-stats">
                                     <div class="bg-white p-2 m-2 rounded-3">
                                         <div class="d-flex mb-3">
-                                            <div class="col-2 as-stats-label pl-4">Due<br/>Today</div>
+                                            <div class="col-2 as-stats-label fw-bold font-20 pl-4">Due<br/>Today</div>
                                             <div class="col-2 px-2 text-end total_stats_num"><span>{{ mainStats.total_due_today ? mainStats.total_due_today : 0}}</span></div>
                                             <div class="col-8 pr-5">
                                                 <div class="red-stats text-white d-flex justify-content-between text-center rounded-pill">
@@ -66,7 +66,7 @@
                                             </div>
                                         </div>
                                         <div class="d-flex">
-                                            <div class="col-2 as-stats-label pl-4">Stores</div>
+                                            <div class="col-2 as-stats-label font-20 pl-4">Stores</div>
                                             <div class="col-2 px-2 text-end total_stats_num">{{mainStats.due_today_stores ? mainStats.due_today_stores : 0}}</div>
                                             <div class="col-8 pr-5">
                                                 <div class="red-stats text-white d-flex justify-content-between text-center is_percent">
@@ -96,7 +96,7 @@
                                 <div class="each-home-stats">
                                     <div class="bg-white p-2 m-2 rounded-3">
                                         <div class="d-flex mb-3">
-                                            <div class="col-2 as-stats-label pl-4">Due<br/>Tomorrow</div>
+                                            <div class="col-2 as-stats-label fw-bold font-20 pl-4">Due<br/>Tomorrow</div>
                                             <div class="col-2 px-2 text-end total_stats_num">{{mainStats.total_due_tomorrow ? mainStats.total_due_tomorrow : 0}}</div>
                                             <div class="col-8 pr-5">
                                                 <div class="red-stats text-white d-flex justify-content-between text-center">
@@ -170,7 +170,7 @@
                                 <div class="each-home-stats">
                                     <div class="bg-white p-2 m-2 rounded-3">
                                     <div class="d-flex mb-3">
-                                        <div class="col-2 as-stats-label pl-4">Due<br/>Day after</div>
+                                        <div class="col-2 as-stats-label fw-bold font-20 pl-4">Due<br/>Day after</div>
                                         <div class="col-2 px-2 text-end total_stats_num">{{mainStats.total_due_later ? mainStats.total_due_later : 0}}</div>
                                         <div class="col-8 pr-5">
                                             <div class="red-stats text-white d-flex justify-content-between text-center">
