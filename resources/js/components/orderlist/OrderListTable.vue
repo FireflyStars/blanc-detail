@@ -1,6 +1,6 @@
 <template>
     <div class="container-fluid position-relative p-0">
-        <filters :filterDef="filterDef"></filters>
+    <filters :filterDef="filterDef"></filters>
     <table class="orderlist-table" v-if="ORDER_LIST.length>0">
         <thead>
         <tr>
@@ -12,8 +12,8 @@
         </thead>
         <transition-group tag="tbody"  name="list" appear>
         <tr class="trow" v-for="order in ORDER_LIST" :key="order.id" :class="{current_sel:order.id==CURRENT_SELECTED&&route.params.order_id>0,late:order.Status=='LATE'&&order.suggestedDeliveryDate==null&&!hasRoles(['cc']),multi:MULTI_CHECKED.includes(order.id)&&order.id!=CURRENT_SELECTED}">
-<template v-for="(col,index) in tabledef">
-            <td class="tcol" :colspan="colspan(index,order)"  :style="{width:col.width}" :class="{'check-box': col.type=='checkbox',[index]:true}"  @click="selectrow(order.id,index)" v-if="hideOnLate(order.Status,index,order)" >
+            <template v-for="(col,index) in tabledef" :key="index">
+            <td class="tcol" :colspan="colspan(index,order)"  :style="{width:col.width}" :class="{'check-box': col.type=='checkbox',[index]:true}"  @click="selectrow(order.id,index)" v-if="hideOnLate(order.Status,index,order)">
 
 
                 <check-box v-if="col.type=='checkbox'" :checked_checkbox="(order.id==CURRENT_SELECTED&&route.params.order_id>0)||MULTI_CHECKED.includes(order.id)" :id="order.id" @checkbox-clicked="checkboxclicked"></check-box>
@@ -23,7 +23,7 @@
                 <express-icon v-else-if="col.type=='express'" :express_values="order[index]"></express-icon>
                 <span v-else :style="col.css" v-html="preprocess(col,order[index],order)"></span>
             </td>
-</template>
+            </template>
             </tr>
 
         </transition-group>
@@ -83,7 +83,7 @@
     export default {
         name: "OrderListTable",
         props:['tabledef',"tab","id"],
-        components:{Filters, Tag,CheckBox,ExpressIcon,SortArrows},
+        components:{Filters, Tag, CheckBox, ExpressIcon, SortArrows},
         setup(props){
             const router = useRouter();
             const store=useStore();
@@ -102,7 +102,7 @@
             });
             function loadMore(){
                 store.dispatch(`${ORDERLIST_MODULE}${ORDERLIST_LOADERMSG}`,'Loading more, please wait...');
-                 store.dispatch(`${ORDERLIST_MODULE}${ORDERLIST_LOAD_LIST}`,{showmore:1}).finally(()=>{
+                store.dispatch(`${ORDERLIST_MODULE}${ORDERLIST_LOAD_LIST}`,{showmore:1}).finally(()=>{
                      window.scrollTo({ left: 0, top: document.body.scrollHeight, behavior: "smooth" })
                 });
 

@@ -110,9 +110,9 @@
                     type:'checkbox',
                 },
                 id:{
-                   name:"Order N°",
+                    name:"Order N°",
                     width:"10%",
-                   sortable:false
+                    sortable:false
                },
                 express:{
                     name:" ",

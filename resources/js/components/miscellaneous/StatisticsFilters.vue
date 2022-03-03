@@ -93,9 +93,9 @@
             function applyFilter() {
                 const data = {
                     customFilter:customFilter.value,
-                    startDate:startDate.value,
-                    endDate:endDate.value,
-                    dateRangeType:selectedValue.value
+                    startDate: startDate.value,
+                    endDate: endDate.value,
+                    dateRangeType: selectedValue.value
                 };
                 customFilterText.value=`Compared From ${new Date(startDate.value).getDate()} ${monthNames[new Date(startDate.value).getMonth()]}, ${new Date(startDate.value).getFullYear()} To ${new Date(endDate.value).getDate()} ${monthNames[new Date(endDate.value).getMonth()]}, ${new Date(endDate.value).getFullYear()}`;
                 context.emit("update:filterVal", data);
